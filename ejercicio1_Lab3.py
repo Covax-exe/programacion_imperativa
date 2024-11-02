@@ -16,16 +16,18 @@ def calificacionesRestaurante():
     cant_estudiantes = int(input("Ingrese la cantidad de estudiantes a encuestar: "))
 
     calificaciones = [0] * cant_estudiantes
-    frecuencia = [0] * 10  # Arreglo estático de 10 elementos para las frecuencias 😼👊
+    frecuencia = [0] * 10  # Arreglo estático de 10 elementos para las frecuencias 
 
     for i in range(0, cant_estudiantes, 1):
         nota = int(input(f"Estudiante {i + 1}. Digite la calificación de 1 a 10 (0 para salir): "))
+        if nota == 0:
+            break
         while nota < 1 or nota > 10:
             print("Nota inválida. Ingrese una calificación entre 1 y 10.")
             nota = int(input(f"Estudiante {i + 1}. Digite la calificación de 1 a 10 (0 para salir): "))
 
         calificaciones[i] = nota
-        frecuencia[nota - 1] += 1  # Incrementar la frecuencia de la calificación // Es -1 porque empieza en 0 👩‍🦯
+        frecuencia[nota - 1] += 1  # Incrementar la frecuencia de la calificación // Es -1 porque empieza en 0 
 
     # FINAL
     print(f"\nCantidad de estudiantes encuestados: {cant_estudiantes}")
@@ -33,8 +35,8 @@ def calificacionesRestaurante():
     print("Calificación    Num estud    Histograma")
 
     for i in range(10):
-        # Mostrar la calificación, el número de estudiantes y el histograma 🤭
-        print(f"{i + 1:<15} {int(frecuencia[i]):<12} {'*' * int(frecuencia[i])}")  #:<15 y :<12 para acomodarlos en las columnas 🤪
+        # Mostrar la calificación, el número de estudiantes y el histograma 
+        print(f"{i + 1:<15} {int(frecuencia[i]):<12} {'*' * int(frecuencia[i])}")  #:<15 y :<12 para acomodarlos en las columnas 
 
 
 calificacionesRestaurante()
