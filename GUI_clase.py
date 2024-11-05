@@ -1,3 +1,5 @@
+"ELEVAR AL CUADRADO"
+
 from tkinter import *
 
 def calcular():
